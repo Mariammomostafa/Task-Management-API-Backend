@@ -14,8 +14,13 @@ This API backend project using Spring boot With Spring Security JWT , Spring Boo
        - JwtAuthenticationFilter ( each logged user has specific token which must be sent with each request ,this filter 
           check out existence this token and it's validation  , if not exist or invalid , the request will be cancled  )
        - WebSecurityConfiguration (to determine which requests are allowed for only admin, only employees or both or available for any 
-         one ) , WebSecurity  used to create the FilterChain that performs the web based security for Spring Security and this 
-         configuration is imported when using EnableWebSecurity annotation
+         one )
+           - WebSecurity  used to create the FilterChain that performs the web based security for Spring Security and this 
+             configuration is imported when using EnableWebSecurity annotation
+           - AuthenticationProvider : responsible for authenticating a user's credentials and returning an Authentication object that 
+             represents the authenticated user
+           - Password Encoder : storing passwords securely by integrating with PasswordEncoder
+           - AuthenticationManager : handle and verify user credentials
     * Entities ==> entity for each os (Task , comment , User )
     * Dto ==> for each of entity and also for login (loginRequest and loginResponse) and signupDto
     * Repository ==> each entity must has repository for crud operations (TaskRepository , CommentRepository ,taskRepository)
