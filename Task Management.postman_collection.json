@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "f735344f-2fcd-48f4-b335-5431f8e194c0",
+		"name": "Task Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38309234",
+		"_collection_link": "https://cc2222-9166.postman.co/workspace/cc-Workspace~5af00c5d-0de4-460c-8135-3362adf2de31/collection/38309234-f735344f-2fcd-48f4-b335-5431f8e194c0?action=share&source=collection_link&creator=38309234"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"monna1985@yahoo.com\",\r\n    \"password\":\"1985\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"name\": \"soha hasan\",\r\n        \"email\": \"soha521885@gmail.com\",\r\n        \"password\": \"521885\"        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "comment",
+					"item": [
+						{
+							"name": "create comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/admin/task/comment/14?content=Are you Finish?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"task",
+										"comment",
+										"14"
+									],
+									"query": [
+										{
+											"key": "content",
+											"value": "Are you Finish?"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get comment by task id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/comments/7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"comments",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tasks",
+					"item": [
+						{
+							"name": "create Task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"change entity\",\r\n    \"description\":\"remove getters and setters and add Data annotation\",\r\n    \"duedate\":\"2023-05-15\",\r\n    \"priority\":\"MEDIUM\",\r\n    \"employeeId\":\"6\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/admin/task",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"task"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get All tasks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/tasks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{     \r\n    \"title\":\"change entity\",\r\n    \"description\":\"remove getters and setters and add Data annotation\",\r\n    \"duedate\":\"2023-05-15\",\r\n    \"priority\":\"MEDIUM\",\r\n    \"employeeId\":\"6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/admin/task/15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"task",
+										"15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get task by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/task/14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"task",
+										"14"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"title\": \"Update Data Base\",\r\n    \"description\": \"change database from sql to postgree , do the best \",\r\n    \"duedate\": \"2025-01-06T14:29:10.000+00:00\",\r\n    \"priority\": \"MEDIUM\",\r\n    \"taskStatus\": \"INPROGRESS\",\r\n    \"employeeId\": 4,\r\n    \"employeeName\": \"hala\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/admin/task/14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"task",
+										"14"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get task by title",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/tasks/search/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"tasks",
+										"search",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "get All users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCR6QVFsbmxRY0hCdG0ycGFndVRacUVlRU0zSHRnYkFxYUpIeXRsc0MyNE9md0psNHlob29GTyIsInVzZXJuYW1lIjoiYWRtaW5AZ21haWwuY29tIiwic3ViIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzM0OTYzMTQyLCJleHAiOjE3MzUwNDk1NDJ9.-PNbAx_VPKO69YiY8Gf2Zy5vo2_ewnMusD8aiewctdQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "get tasks of this employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRUVDgxeWl4M1YyLjJuLy5xRHphSmR1MmVxUkQxV21uNWdSTm84WWFhNGczTno1aTFrY0l4bSIsInVzZXJuYW1lIjoiZ2FubmExOTk1QGdtYWlsLmNvbSIsInN1YiI6Imdhbm5hMTk5NUBnbWFpbC5jb20iLCJpYXQiOjE3MzQ5Nzg3NTIsImV4cCI6MTczNTA2NTE1Mn0.20CxQVnrRR7-1Ys57ztsdT9VeQskB_qodd030OBDe5o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employee/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employee",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update task status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRUVDgxeWl4M1YyLjJuLy5xRHphSmR1MmVxUkQxV21uNWdSTm84WWFhNGczTno1aTFrY0l4bSIsInVzZXJuYW1lIjoiZ2FubmExOTk1QGdtYWlsLmNvbSIsInN1YiI6Imdhbm5hMTk5NUBnbWFpbC5jb20iLCJpYXQiOjE3MzQ5Nzg3NTIsImV4cCI6MTczNTA2NTE1Mn0.20CxQVnrRR7-1Ys57ztsdT9VeQskB_qodd030OBDe5o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employee/task/4/COMPLETED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employee",
+								"task",
+								"4",
+								"COMPLETED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRTa2MvcFFINGRYRmZFejc3ZURYY2FlS2RoSkxzYUZZYjF0UnhzR1Bsc0FxUWhtTTMxY1Z2eSIsInVzZXJuYW1lIjoibW9ubmExOTg1QHlhaG9vLmNvbSIsInN1YiI6Im1vbm5hMTk4NUB5YWhvby5jb20iLCJpYXQiOjE3MzU0MDY1MjMsImV4cCI6MTczNTQ5MjkyM30.BvMfgn6oKPyTb1s0AOlgI1J0qTX-KMO-LVpoFNUvGno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employee/task/comment/7?content=i will be finish soooon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employee",
+								"task",
+								"comment",
+								"7"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "i will be finish soooon"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
